@@ -2,12 +2,9 @@
 Chat GPT 끼리 대화를 시켜보고 싶다
 
 
-### example 1
-![image](https://user-images.githubusercontent.com/10369528/222767853-39178760-0a08-4c19-b10b-5850d353deea.png)
+### examples
+![image](https://user-images.githubusercontent.com/10369528/222776686-6cd61003-b16a-40b9-a662-ed409202221e.png)
 
+![image](https://user-images.githubusercontent.com/10369528/222777240-c27f1589-5a5d-4af1-88a8-595db62d7d44.png)
 
-### example 2 
-![image](https://user-images.githubusercontent.com/10369528/222768544-14216e59-b16d-42cb-8f48-6f22755151d7.png)
-
-### example 3 
-![image](https://user-images.githubusercontent.com/10369528/222769755-f62f0c8c-e0d2-4353-a787-e86a20c3aa8c.png)
+![image](https://user-images.githubusercontent.com/10369528/222777919-dca9d3c2-3983-44a8-a38c-e0046fb7f92c.png)
