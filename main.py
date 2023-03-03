@@ -35,10 +35,11 @@ def chat_completion(messages, ai_id):
 
 def chat_loop(sleep_time):
     query = INITIATING_QUERY
+    print(Fore.RED + f"initial: {query}\n")
     for ai_id in ai_id_generator():
+        query = chat_completion(query, ai_id)
         color = Fore.GREEN if ai_id == "AI_0_ID" else Fore.WHITE
         print(color + f"{ai_id}: {query}\n")
-        query = chat_completion(query, ai_id)
         sleep(sleep_time)
 
 
