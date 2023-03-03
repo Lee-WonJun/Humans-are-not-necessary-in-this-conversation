@@ -27,19 +27,28 @@ def chat_answer(completion):
 def chat_completion(messages, ai_id):
     completion = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
-        messages=[{"role": "user", "content": messages}],
+        messages=messages,
         user=ai_id
     )
     return chat_answer(completion)
 
 
 def chat_loop(sleep_time):
-    query = INITIATING_QUERY
-    print(Fore.RED + f"initial: {query}\n")
+    def swap_role(message):
+        if message["role"] == "user":
+            return "assistant"
+        return "user"
+
+    messages = [{"role": "user", "content": INITIATING_QUERY}]
+    print(Fore.RED + f"initial: {INITIATING_QUERY}\n")
     for ai_id in ai_id_generator():
-        query = chat_completion(query, ai_id)
+        answer = chat_completion(messages, ai_id)
+        messages.append({"role": "assistant", "content": answer})
         color = Fore.GREEN if ai_id == "AI_0_ID" else Fore.WHITE
-        print(color + f"{ai_id}: {query}\n")
+        print(color + f"{ai_id}: {answer}\n")
+
+        # swap user and assistant
+        messages = [{"role": swap_role(message), "content": message["content"]} for message in messages]
         sleep(sleep_time)
 
 
